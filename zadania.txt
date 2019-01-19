@@ -1,8 +1,0 @@
--PRZEMIENNY(x)|OPERATOR(x),
--OPERATOR(y)|LACZNY(y),
-OPERATOR(Plus),
-OPERATOR(Minus),
-PRZEMIENNY(Mnozenie),
--PRZEMIENNY(Minus),
-
--LACZNY(Mnozenie)

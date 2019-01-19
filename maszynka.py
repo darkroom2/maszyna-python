@@ -37,7 +37,7 @@ def parsuj(zdanie):
         return zdanie
     else:
         if dzialanie == '-':
-            lista = [dzialanie, parsuj(zdanie[1:])]  # TODO: zmienic strip na lepszy zeby bralo stringa po nawiasie
+            lista = [dzialanie, parsuj(zdanie[1:])]
             return lista
         else:
             operandy = zdanie.split(dzialanie)
@@ -62,11 +62,12 @@ def stworz_literal(zdanie):
 
 def stworz_klauzule(zdanie):
     if zdanie[1] in priorytety:  # klauzula, wiec trzeba wyluskac literaly
-        klauzule = [stworz_klauzule(zdanie[0]), stworz_klauzule(zdanie[2])]
-        return klauzule
+        klauzula1 = stworz_klauzule(zdanie[0])
+        klauzula2 = stworz_klauzule(zdanie[2])
+        return klauzula1.dodaj(klauzula2)
     else:
-        literaly = [stworz_literal(zdanie)]
-        return Klauzula(literaly)
+        literal = [stworz_literal(zdanie)]
+        return Klauzula(literal)
 
 
 print('oryginalne')
@@ -79,123 +80,4 @@ print(zdania)
 lista_klauzul = [stworz_klauzule(zdanie) for zdanie in zdania]
 print(lista_klauzul)
 
-# zdania = [zamienRownowaznosc(zdanie) for zdanie in zdania]
-# print('zamieniona rownowaznosc')
-# print(zdania)
-#
-# zdania = [zamienImplikacje(zdanie) for zdanie in zdania]
-# print('zamieniona implik')
-# print(zdania)
-
-# zdania = [redukcjaMinusow(zdanie) for zdanie in zdania]
-# print('zredukowane minusy')
-# print(zdania)
-
-
-# def rozbijAlternatywe2(zdanie):
-#     pass
-#
-#
-# def rozbijAlternatywe(zdanie):
-#     zdanko = zdanie
-#     if zdanko[0][1] in priorytety:          # [0] is left operand, [1] is sign [2] is right operand
-#         zdanko = rozbijAlternatywe2(zdanko)
-#         if zdanko[1] == '&':
-#             return zdanko
-#     if zdanko[2][1] in priorytety:
-#         zdanko = rozbijAlternatywe2(zdanko)
-#         return zdanko
-#     return [zdanko[0], '|', zdanko[1]]
-
-
-# def koniunkcjaAlternatyw(zdanie):
-#     zdanko = zdanie
-#     znak = zdanko[1]
-#     if znak in priorytety:
-#         if znak == '|':
-#             zdanko = rozbijAlternatywe(zdanko)
-#         elif znak == '&':
-#             zdanko[0] = koniunkcjaAlternatyw(zdanko[0])
-#             zdanko[0] = koniunkcjaAlternatyw(zdanko[0])
-#         else:
-#             raise ValueError('Tu nie moze byc innego znaku, a jak jest to blad parsowania')
-#     return zdanko
-
-
-# zdania = [koniunkcjaAlternatyw(zdanie) for zdanie in zdania]
-# print('na koniuncje alternatyw')
-# print(zdania)
-
-
-# def zamienRownowaznosc(zdanie):
-#     zdanko = zdanie
-#     if zdanko[0] == '-':
-#         zdanko[1] = zamienRownowaznosc(zdanko[1])  # TODEBUG: lista lub nie lista to debug.
-#     elif zdanko[1] in priorytety:
-#         zdanko[0] = zamienRownowaznosc(zdanko[0])
-#         zdanko[2] = zamienRownowaznosc(zdanko[2])
-#         if zdanko[1] == '=':
-#             lewa_implikacja = [zdanko[0], '>', zdanko[2]]
-#             prawa_implikacja = [zdanko[2], '>', zdanko[0]]
-#             zdanko = [lewa_implikacja, '&', prawa_implikacja]
-#
-#     return zdanko
-# def nagacja(param):
-#     if param[0] == '-':
-#         return param[1]
-#     else:
-#         return ['-', param]
-#
-#
-# def zamienImplikacje(zdanie):
-#     zdanko = zdanie
-#     if zdanko[0] == '-':
-#         zdanko[1] = zamienImplikacje(zdanko[1])  # TODEBUG: lista lub nie lista to debug.
-#     elif zdanko[1] in priorytety:
-#         zdanko[0] = zamienImplikacje(zdanko[0])
-#         zdanko[2] = zamienImplikacje(zdanko[2])
-#         if zdanko[1] == '>':
-#             zdanko = [nagacja(zdanko[0]), '|', zdanko[2]]
-#
-#     return zdanko
-# def redukcjaMinusow(zdanie):
-#     zdanko = zdanie
-#     if zdanko[0] == '-':
-#         if isinstance(zdanko[1], str):  # literal, jesli po minusie nie ma listy tylko odrazu strink
-#             return zdanko
-#         elif zdanko[1][0] == '-':  # podwojne przeczenie, tu redukcja
-#             zdanko[1][1] = redukcjaMinusow(zdanko[1][1])
-#         else:  # elif zdanko [1] in priori:
-#             zdanko[1][0] = redukcjaMinusow(nagacja(zdanko[1][0]))   #negujemu bo przed nawiasem minus (weszlismy do pierwszego ifa)
-#             zdanko[1][2] = redukcjaMinusow(nagacja(zdanko[1][2]))
-#             if zdanko[1][1] == '&':
-#                 zdanko[1][1] = '|'
-#             elif zdanko[1][1] == '|':
-#                 zdanko[1][1] = '&'
-#             return zdanko[1]
-#     elif zdanko[1] in priorytety:
-#         zdanko[0] = redukcjaMinusow(zdanko[0])
-#         zdanko[2] = redukcjaMinusow(zdanko[2])
-#     return zdanko
-# def alternNaKlauz(zdanie):
-#     zdanko = zdanie
-#     znak = zdanko[1]
-#     if znak in priorytety:
-#         # TODO: usunac
-#         if znak != '|':
-#             raise RuntimeError("TU POWINNA BYC ALTERNATYWA NIE MA INNEJ OPCJI")
-#         klauzula = [alternNaKlauz(zdanko[0]), alternNaKlauz(zdanko[2])]
-#         return klauzula
-#     else:
-#
-#
-#
-# def stworzKlauzule(zdanie):
-#     zdanko = zdanie
-#     znak = zdanko[1]
-#     if znak == '&':
-#         klauzule = [stworzKlauzule(zdanko[0]), stworzKlauzule(zdanko[2])]
-#         return klauzule
-#
-#     klauzule = [alternNaKlauz(zdanko)]
-#     return klauzule
+# TODO: Clauses (for now only 2 argument clauses) are parsed properly, now we have to implement algorithm.

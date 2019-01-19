@@ -29,10 +29,16 @@ class Literal:
     def __bool__(self):
         return self.Bool
 
+    __repr__ = __str__
+
 
 class Klauzula:
     def __init__(self, literaly):
         self.Literaly = literaly
+
+    def dodaj(self, klauzula):
+        self.Literaly.extend(klauzula.Literaly)
+        return self
 
     def __str__(self):
         return '|'.join(str(x) for x in self.Literaly)
