@@ -1,0 +1,12 @@
+PW.W.3. Maszyna wnioskująca przez rezolucję i zaprzeczenie
+Napisać program, który przyjmuje:
+- klauzule w rachunku predykatów pierwszego rzędu
+- tezę do udowodnienia.
+Następnie, przeprowadza rezolucyjne wnioskowanie przez zaprzeczenie. Wynik demonstruje
+graficznie. Do wyboru są trzy strategie sterowania wnioskowaniem: zbioru uzasadnień, z
+preferencją dla krótkich klauzul i liniowa. 
+
+
+Atomem jest formula predykatowa A(...) a takze T i F.
+Literalem jest formula postaci A(...) lub -A(...), gdzie A to predykat.
+Klauzula jest alternatywa literalow, czyli formula postaci L1v...vLn
