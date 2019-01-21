@@ -120,3 +120,197 @@
 #
 #     klauzule = [alternNaKlauz(zdanko)]
 #     return klauzule
+
+
+
+
+
+
+
+
+# instnieje_rezolucja = True
+#
+# while instnieje_rezolucja:
+#     istnieje_rezolucja = False
+
+# def sprawdz_rezolucje:
+#     pass
+# tezy = lista_klauzul[-1]
+# roboczy = []
+
+
+# def rezolucja_roboczego(lista_klauzul, roboczy_akt, roboczy):
+#     if roboczy_akt is None:
+#         return False
+#     else:
+#         for klauzula in lista_klauzul:
+#             roboczy += rezolucja(klauzula, roboczy_akt)
+#             roboczy_akt = roboczy[-1]
+#             lista_klauzul += roboczy_akt
+#             if rezolucja_roboczego(lista_klauzul, roboczy_akt, roboczy):
+#                 break
+
+
+# output = da_sie_rezolucje(lista_klauzul[0].Literaly[0], lista_klauzul[1].Literaly[0])
+# print(output)
+# quit()
+# lista_rezolucji = []
+
+# def zaszlaRezolucja(gornaKlauzula, dolnaKlauzula):
+#     pass
+
+
+# def rezolucja(klauzula, teza):
+#     gornaKlauzula = teza
+#     dolnaKlauzula = klauzula
+#     nowa_gorna_klauzula = copy.deepcopy(gornaKlauzula)
+#     nowa_dolna_klauzula = copy.deepcopy(dolnaKlauzula)
+#     lista_unifikacji = []
+#     unifikacja_gorna = []
+#     unifikacja_dolna = []
+#     for literal_gorny in gornaKlauzula.Literaly:
+#         for literal_dolny in dolnaKlauzula.Literaly:
+#             if literal_gorny.rezolucjowalny(literal_dolny):
+#                 for index, arg_gorny in enumerate(literal_gorny.Predykat.Argumenty):
+#                     arg_dolny = literal_dolny.Predykat.Argumenty[index]
+#                     if arg_gorny.Nazwa != arg_dolny.Nazwa:
+#                         lista_unifikacji.extend([arg_gorny, arg_dolny])
+#                 for i in range(0, len(lista_unifikacji), 2):
+#                     pierwszy = lista_unifikacji[i]
+#                     drugi = lista_unifikacji[i + 1]
+#                     if not pierwszy.stala() and drugi.stala():
+#                         # for lit in nowa_gorna_klauzula.Literaly:
+#                         #     for arg in lit.Predykat.Argumenty:
+#                         #         if arg.Nazwa == pierwszy.Nazwa:
+#                         unifikacja_gorna.extend([pierwszy.Nazwa, drugi.Nazwa])
+#
+#                     if not pierwszy.stala() and not drugi.stala() and pierwszy.Nazwa != drugi.Nazwa:
+#                         # for lit in nowa_gorna_klauzula.Literaly:
+#                         #     for arg in lit.Predykat.Argumenty:
+#                         #         if arg.Nazwa == pierwszy.Nazwa:
+#                         unifikacja_gorna.extend([pierwszy.Nazwa, drugi.Nazwa])
+#
+#                     if pierwszy.stala() and not drugi.stala():
+#                         unifikacja_dolna.extend([drugi.Nazwa, pierwszy.Nazwa])
+#
+#                 for lit in nowa_gorna_klauzula.Literaly:
+#                     for arg in lit.Predykat.Argumenty:
+#                         for i in range(0, len(unifikacja_gorna), 2):
+#                             if arg.Nazwa == unifikacja_gorna[i]:
+#                                 arg.Nazwa = unifikacja_gorna[i + 1]
+#                                 break
+#                 print(nowa_dolna_klauzula)
+#                 for lit in nowa_dolna_klauzula.Literaly:
+#                     for arg in lit.Predykat.Argumenty:
+#                         for i in range(0, len(unifikacja_dolna), 2):
+#                             if arg.Nazwa == unifikacja_dolna[i]:
+#                                 arg.Nazwa = unifikacja_dolna[i + 1]
+#                                 print(nowa_dolna_klauzula)
+#                                 break
+
+
+tezy = [lista_klauzul[-1]]
+
+
+# def wnioskuj(lista_klauzul, roboczy):
+#     for klauzula in lista_klauzul:
+#         for teza in tezy:
+#             try:
+#                 roboczy += rezolucja(klauzula, teza)
+#             except TypeError:
+#                 continue
+#             lista_klauzul += roboczy
+#             roboczy_akt = roboczy[-1]
+#             if rezolucja_roboczego(lista_klauzul, roboczy_akt, roboczy):
+#                 break
+
+
+def sprawdz_rezolucjowalnosc(gorna_klauzula, dolna_klauzula):
+    rezolucja_zaszla = False
+    for literal_z_gornej in gorna_klauzula.Literaly:
+        for literal_z_dolnej in dolna_klauzula.Literaly:
+            if literal_z_gornej.rezolucjowalny(literal_z_dolnej):
+                rezolucja_zaszla = True
+    return rezolucja_zaszla
+
+
+def ma_rodzicow(gorna_klauzula, dolna_klauzula):
+    return True
+
+
+def zaszla_rezolucja(gorna_klauzula, dolna_klauzula):
+    for laczenie_klauzul in laczenia_klauzul:
+        if ma_rodzicow(gorna_klauzula, dolna_klauzula):
+            return False # TODO: KEK
+
+
+def wnioskuj(lista_klauzul):
+    klauzule = copy.deepcopy(lista_klauzul)
+    dodane_klauzule = []
+    istnieje_rezolucjowalnosc = True
+    while istnieje_rezolucjowalnosc:
+        istnieje_rezolucjowalnosc = False
+        for index, gorna_klauzula in enumerate(lista_klauzul):
+            for dolna_klauzula in lista_klauzul[index+1:]:
+                rezolucjowalna = sprawdz_rezolucjowalnosc(gorna_klauzula, dolna_klauzula)
+                if rezolucjowalna and not zaszla_rezolucja(gorna_klauzula, dolna_klauzula):
+                    istnieje_rezolucjowalnosc = True
+                    #nowa_klauzula =
+
+    print(dodane_klauzule)
+    print(lista_klauzul)
+    quit()
+
+laczenia_klauzul = []
+
+if(wnioskuj(lista_klauzul)):
+    print("Udalo sie")
+
+
+def rezolucja(klauzula, teza):
+    gornaKlauzula = teza
+    dolnaKlauzula = klauzula
+    nowa_gorna_klauzula = copy.deepcopy(gornaKlauzula)
+    nowa_dolna_klauzula = copy.deepcopy(dolnaKlauzula)
+    lista_unifikacji = []
+    unifikacja_gorna = []
+    unifikacja_dolna = []
+    for literal_gorny in gornaKlauzula.Literaly:
+        for literal_dolny in dolnaKlauzula.Literaly:
+            if literal_gorny.rezolucjowalny(literal_dolny):
+                for index, arg_gorny in enumerate(literal_gorny.Predykat.Argumenty):
+                    arg_dolny = literal_dolny.Predykat.Argumenty[index]
+                    if arg_gorny.Nazwa != arg_dolny.Nazwa:
+                        lista_unifikacji.extend([arg_gorny, arg_dolny])
+                for i in range(0, len(lista_unifikacji), 2):
+                    pierwszy = lista_unifikacji[i]
+                    drugi = lista_unifikacji[i + 1]
+                    if not pierwszy.stala() and drugi.stala():
+                        # for lit in nowa_gorna_klauzula.Literaly:
+                        #     for arg in lit.Predykat.Argumenty:
+                        #         if arg.Nazwa == pierwszy.Nazwa:
+                        unifikacja_gorna.extend([pierwszy.Nazwa, drugi.Nazwa])
+
+                    if not pierwszy.stala() and not drugi.stala() and pierwszy.Nazwa != drugi.Nazwa:
+                        # for lit in nowa_gorna_klauzula.Literaly:
+                        #     for arg in lit.Predykat.Argumenty:
+                        #         if arg.Nazwa == pierwszy.Nazwa:
+                        unifikacja_gorna.extend([pierwszy.Nazwa, drugi.Nazwa])
+
+                    if pierwszy.stala() and not drugi.stala():
+                        unifikacja_dolna.extend([drugi.Nazwa, pierwszy.Nazwa])
+
+                for lit in nowa_gorna_klauzula.Literaly:
+                    for arg in lit.Predykat.Argumenty:
+                        for i in range(0, len(unifikacja_gorna), 2):
+                            if arg.Nazwa == unifikacja_gorna[i]:
+                                arg.Nazwa = unifikacja_gorna[i + 1]
+                                break
+
+                for lit in nowa_dolna_klauzula.Literaly:
+                    for arg in lit.Predykat.Argumenty:
+                        for i in range(0, len(unifikacja_dolna), 2):
+                            if arg.Nazwa == unifikacja_dolna[i]:
+                                arg.Nazwa = unifikacja_dolna[i + 1]
+                                break
+                nowa_gorna_klauzula.usun_prawde(dolnaKlauzula)
