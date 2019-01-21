@@ -183,4 +183,6 @@ wnioskuj(teza)
 for tuple in rezolucje:
     print(f'{tuple[0]} and {tuple[1]} => {tuple[2]}')
 
+print(rezolucje)
+
 # TODO: mamy tutaj grupki z jakich klauzul ktora klauzula powstala, no i teraz mozemy to wykorzystac do narysowania drzewa jakos...
