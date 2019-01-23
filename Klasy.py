@@ -76,7 +76,6 @@ class Literal:
             return False
         return self.Predykat.dajacy_prawde(inny_literal.Predykat)
 
-
     __repr__ = __str__
 
 
@@ -100,6 +99,7 @@ class Klauzula:
         return '|'.join(str(x) for x in self.Literaly)  # + f'{id(self)}'
 
     def usun_prawde(self, inna_klauzula):
+        different_args = True
         inna_klauzula = copy.deepcopy(inna_klauzula)
         for lit_gorna in self.Literaly:
             for lit_dolna in inna_klauzula.Literaly:
@@ -110,13 +110,37 @@ class Klauzula:
                     seta = []
                     setb = []
                     for lit in self.Literaly:
+                        different_args = True
                         if lit.Predykat.Nazwa not in setb:
                             seta.append(lit)
                             setb.append(lit.Predykat.Nazwa)
+                        else:
+                            for literal in seta:
+                                if literal.Predykat.Nazwa == lit.Predykat.Nazwa:
+                                    for index, arg_w_liscie in enumerate(literal.Predykat.Argumenty):
+                                        arg_nowy = lit.Predykat.Argumenty[index]
+                                        if arg_w_liscie.Nazwa != arg_nowy.Nazwa:
+                                            break
+                                        different_args = False
+
+                            if different_args:
+                                seta.append(lit)
                     for lit in inna_klauzula.Literaly:
+                        different_args = True
                         if lit.Predykat.Nazwa not in setb:
                             seta.append(lit)
                             setb.append(lit.Predykat.Nazwa)
+                        else:
+                            for literal in seta:
+                                if literal.Predykat.Nazwa == lit.Predykat.Nazwa:
+                                    for index, arg_w_liscie in enumerate(literal.Predykat.Argumenty):
+                                        arg_nowy = lit.Predykat.Argumenty[index]
+                                        if arg_w_liscie.Nazwa != arg_nowy.Nazwa:
+                                            break
+                                        different_args = False
+
+                            if different_args:
+                                seta.append(lit)
                     if seta:
                         return Klauzula(seta)
                     else:
@@ -132,5 +156,5 @@ class Klauzula:
     #             if literal_z_gornej_klauzuli.rezolucjowalny(literal_z_dolnej_klauzuli):
     #                 lista_unifikacji = stworz_liste_unifikacji(literal_z_gornej_klauzuli.Predykat, literal_z_dolnej_klauzuli.Predykat)
     #                 print(lista_unifikacji)
-                    
+
     __repr__ = __str__

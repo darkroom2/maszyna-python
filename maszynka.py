@@ -122,7 +122,7 @@ def rezolucja(klauzula, teza):
                                 if arg.Nazwa == unifikacja_dolna[i]:
                                     arg.Nazwa = unifikacja_dolna[i + 1]
                                     break
-    return nowa_gorna_klauzula.usun_prawde(nowa_dolna_klauzula)
+                return nowa_gorna_klauzula.usun_prawde(nowa_dolna_klauzula)
 
 
 # def wnioskuj(roboczy):
