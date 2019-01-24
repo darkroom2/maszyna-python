@@ -1,0 +1,156 @@
+[-NKOCHA(xa,Wspin)|KOCHA(xa,Narty), -NKOCHA(xb,Narty)|KOCHA(xb,Wspin), -KOCHA(xc,Wspin)|NLUBI(xc,Deszcz), -LUBI(xd,Deszcz)|NKOCHA(xd,Wspin), -KOCHA(xe,Narty)|LUBI(xe,Snieg), -NLUBI(xf,Snieg)|NKOCHA(xf,Narty), -LUBI(Abacki,xg)|NLUBI(Babacki,xg), -NLUBI(Babacki,xh)|LUBI(Abacki,xh), -LUBI(Babacki,xi)|NLUBI(Abacki,xi), -NLUBI(Abacki,xj)|LUBI(Babacki,xj), LUBI(Abacki,Deszcz), LUBI(Abacki,Snieg), -KOCHA(Babacki,Wspin)]
+
+-KOCHA(Babacki,Wspin)	res.	-NKOCHA(xb,Narty)|KOCHA(xb,Wspin)	=>	-NKOCHA(Babacki,Narty)
+-NKOCHA(Babacki,Narty)	res.	-NLUBI(xf,Snieg)|NKOCHA(xf,Narty)	=>	-NLUBI(Babacki,Snieg)
+-NLUBI(Babacki,Snieg)	res.	-LUBI(Abacki,xg)|NLUBI(Babacki,xg)	=>	-LUBI(Abacki,Snieg)
+-LUBI(Abacki,Snieg)	res.	-KOCHA(xe,Narty)|LUBI(xe,Snieg)	=>	-KOCHA(Abacki,Narty)
+-KOCHA(Abacki,Narty)	res.	-NKOCHA(xa,Wspin)|KOCHA(xa,Narty)	=>	-NKOCHA(Abacki,Wspin)
+-NKOCHA(Abacki,Wspin)	res.	-LUBI(xd,Deszcz)|NKOCHA(xd,Wspin)	=>	-LUBI(Abacki,Deszcz)
+-LUBI(Abacki,Deszcz)	res.	-NLUBI(Babacki,xh)|LUBI(Abacki,xh)	=>	-NLUBI(Babacki,Deszcz)
+0.009291935000000029
+
+[-NKOCHA(xa,Wspin)|KOCHA(xa,Narty), -NKOCHA(xb,Narty)|KOCHA(xb,Wspin), -KOCHA(xc,Wspin)|NLUBI(xc,Deszcz), -LUBI(xd,Deszcz)|NKOCHA(xd,Wspin), -KOCHA(xe,Narty)|LUBI(xe,Snieg), -NLUBI(xf,Snieg)|NKOCHA(xf,Narty), -LUBI(Abacki,xg)|NLUBI(Babacki,xg), -NLUBI(Babacki,xh)|LUBI(Abacki,xh), -LUBI(Babacki,xi)|NLUBI(Abacki,xi), -NLUBI(Abacki,xj)|LUBI(Babacki,xj), LUBI(Abacki,Deszcz), LUBI(Abacki,Snieg), -KOCHA(Babacki,Wspin)]
+
+-KOCHA(Babacki,Wspin)	res.	-NKOCHA(xb,Narty)|KOCHA(xb,Wspin)	=>	-NKOCHA(Babacki,Narty)
+-NKOCHA(Babacki,Narty)	res.	-NLUBI(xf,Snieg)|NKOCHA(xf,Narty)	=>	-NLUBI(Babacki,Snieg)
+-NLUBI(Babacki,Snieg)	res.	-LUBI(Abacki,xg)|NLUBI(Babacki,xg)	=>	-LUBI(Abacki,Snieg)
+-LUBI(Abacki,Snieg)	res.	-KOCHA(xe,Narty)|LUBI(xe,Snieg)	=>	-KOCHA(Abacki,Narty)
+-KOCHA(Abacki,Narty)	res.	-NKOCHA(xa,Wspin)|KOCHA(xa,Narty)	=>	-NKOCHA(Abacki,Wspin)
+-NKOCHA(Abacki,Wspin)	res.	-LUBI(xd,Deszcz)|NKOCHA(xd,Wspin)	=>	-LUBI(Abacki,Deszcz)
+-LUBI(Abacki,Deszcz)	res.	-NLUBI(Babacki,xh)|LUBI(Abacki,xh)	=>	-NLUBI(Babacki,Deszcz)
+0.046133274
+
+[-NKOCHA(xa,Wspin)|KOCHA(xa,Narty), -NKOCHA(xb,Narty)|KOCHA(xb,Wspin), -KOCHA(xc,Wspin)|NLUBI(xc,Deszcz), -LUBI(xd,Deszcz)|NKOCHA(xd,Wspin), -KOCHA(xe,Narty)|LUBI(xe,Snieg), -NLUBI(xf,Snieg)|NKOCHA(xf,Narty), -LUBI(Abacki,xg)|NLUBI(Babacki,xg), -NLUBI(Babacki,xh)|LUBI(Abacki,xh), -LUBI(Babacki,xi)|NLUBI(Abacki,xi), -NLUBI(Abacki,xj)|LUBI(Babacki,xj), LUBI(Abacki,Deszcz), LUBI(Abacki,Snieg), -KOCHA(Babacki,Wspin)]
+
+-KOCHA(Babacki,Wspin)	res.	-NKOCHA(xb,Narty)|KOCHA(xb,Wspin)	=>	-NKOCHA(Babacki,Narty)
+-NKOCHA(Babacki,Narty)	res.	-NLUBI(xf,Snieg)|NKOCHA(xf,Narty)	=>	-NLUBI(Babacki,Snieg)
+-NLUBI(Babacki,Snieg)	res.	-LUBI(Abacki,xg)|NLUBI(Babacki,xg)	=>	-LUBI(Abacki,Snieg)
+-LUBI(Abacki,Snieg)	res.	-KOCHA(xe,Narty)|LUBI(xe,Snieg)	=>	-KOCHA(Abacki,Narty)
+-KOCHA(Abacki,Narty)	res.	-NKOCHA(xa,Wspin)|KOCHA(xa,Narty)	=>	-NKOCHA(Abacki,Wspin)
+-NKOCHA(Abacki,Wspin)	res.	-LUBI(xd,Deszcz)|NKOCHA(xd,Wspin)	=>	-LUBI(Abacki,Deszcz)
+-LUBI(Abacki,Deszcz)	res.	-NLUBI(Babacki,xh)|LUBI(Abacki,xh)	=>	-NLUBI(Babacki,Deszcz)
+0.054016783999999984
+
+[-NKOCHA(xa,Wspin)|KOCHA(xa,Narty), -NKOCHA(xb,Narty)|KOCHA(xb,Wspin), -KOCHA(xc,Wspin)|NLUBI(xc,Deszcz), -LUBI(xd,Deszcz)|NKOCHA(xd,Wspin), -KOCHA(xe,Narty)|LUBI(xe,Snieg), -NLUBI(xf,Snieg)|NKOCHA(xf,Narty), -LUBI(Abacki,xg)|NLUBI(Babacki,xg), -NLUBI(Babacki,xh)|LUBI(Abacki,xh), -LUBI(Babacki,xi)|NLUBI(Abacki,xi), -NLUBI(Abacki,xj)|LUBI(Babacki,xj), LUBI(Abacki,Deszcz), LUBI(Abacki,Snieg), -KOCHA(Babacki,Wspin)]
+
+-KOCHA(Babacki,Wspin)	res.	-NKOCHA(xb,Narty)|KOCHA(xb,Wspin)	=>	-NKOCHA(Babacki,Narty)
+-NKOCHA(Babacki,Narty)	res.	-NLUBI(xf,Snieg)|NKOCHA(xf,Narty)	=>	-NLUBI(Babacki,Snieg)
+-NLUBI(Babacki,Snieg)	res.	-LUBI(Abacki,xg)|NLUBI(Babacki,xg)	=>	-LUBI(Abacki,Snieg)
+-LUBI(Abacki,Snieg)	res.	-KOCHA(xe,Narty)|LUBI(xe,Snieg)	=>	-KOCHA(Abacki,Narty)
+-KOCHA(Abacki,Narty)	res.	-NKOCHA(xa,Wspin)|KOCHA(xa,Narty)	=>	-NKOCHA(Abacki,Wspin)
+-NKOCHA(Abacki,Wspin)	res.	-LUBI(xd,Deszcz)|NKOCHA(xd,Wspin)	=>	-LUBI(Abacki,Deszcz)
+-LUBI(Abacki,Deszcz)	res.	-NLUBI(Babacki,xh)|LUBI(Abacki,xh)	=>	-NLUBI(Babacki,Deszcz)
+0.014298009
+
+[-NKOCHA(xa,Wspin)|KOCHA(xa,Narty), -NKOCHA(xb,Narty)|KOCHA(xb,Wspin), -KOCHA(xc,Wspin)|NLUBI(xc,Deszcz), -LUBI(xd,Deszcz)|NKOCHA(xd,Wspin), -KOCHA(xe,Narty)|LUBI(xe,Snieg), -NLUBI(xf,Snieg)|NKOCHA(xf,Narty), -LUBI(Abacki,xg)|NLUBI(Babacki,xg), -NLUBI(Babacki,xh)|LUBI(Abacki,xh), -LUBI(Babacki,xi)|NLUBI(Abacki,xi), -NLUBI(Abacki,xj)|LUBI(Babacki,xj), LUBI(Abacki,Deszcz), LUBI(Abacki,Snieg), -KOCHA(Babacki,Wspin)]
+
+-KOCHA(Babacki,Wspin)	res.	-NKOCHA(xb,Narty)|KOCHA(xb,Wspin)	=>	-NKOCHA(Babacki,Narty)
+-NKOCHA(Babacki,Narty)	res.	-NLUBI(xf,Snieg)|NKOCHA(xf,Narty)	=>	-NLUBI(Babacki,Snieg)
+-NLUBI(Babacki,Snieg)	res.	-LUBI(Abacki,xg)|NLUBI(Babacki,xg)	=>	-LUBI(Abacki,Snieg)
+-LUBI(Abacki,Snieg)	res.	-KOCHA(xe,Narty)|LUBI(xe,Snieg)	=>	-KOCHA(Abacki,Narty)
+-KOCHA(Abacki,Narty)	res.	-NKOCHA(xa,Wspin)|KOCHA(xa,Narty)	=>	-NKOCHA(Abacki,Wspin)
+-NKOCHA(Abacki,Wspin)	res.	-LUBI(xd,Deszcz)|NKOCHA(xd,Wspin)	=>	-LUBI(Abacki,Deszcz)
+-LUBI(Abacki,Deszcz)	res.	-NLUBI(Babacki,xh)|LUBI(Abacki,xh)	=>	-NLUBI(Babacki,Deszcz)
+0.010570652999999985
+
+[-PRZEMIENNY(x)|OPERATOR(x), -OPERATOR(y)|LACZNY(y), OPERATOR(Plus), OPERATOR(Minus), PRZEMIENNY(Mnozenie), -PRZEMIENNY(Minus), -LACZNY(Mnozenie)]
+
+-LACZNY(Mnozenie)	    res.	-OPERATOR(y)|LACZNY(y)	    =>	-OPERATOR(Mnozenie)
+-OPERATOR(Mnozenie)	    res.	-PRZEMIENNY(x)|OPERATOR(x)	=>	-PRZEMIENNY(Mnozenie)
+-PRZEMIENNY(Mnozenie)	res.	PRZEMIENNY(Mnozenie)	    =>	F
+0.0011878379999999966
+
+[-PRZEMIENNY(x)|OPERATOR(x), -OPERATOR(y)|LACZNY(y), OPERATOR(Plus), OPERATOR(Minus), PRZEMIENNY(Mnozenie), -PRZEMIENNY(Minus), -LACZNY(Mnozenie)]
+
+-LACZNY(Mnozenie)	res.	-OPERATOR(y)|LACZNY(y)	=>	-OPERATOR(Mnozenie)
+-OPERATOR(Mnozenie)	res.	-PRZEMIENNY(x)|OPERATOR(x)	=>	-PRZEMIENNY(Mnozenie)
+-PRZEMIENNY(Mnozenie)	res.	PRZEMIENNY(Mnozenie)	=>	F
+0.0017723709999999948
+
+[-PRZEMIENNY(x)|OPERATOR(x), -OPERATOR(y)|LACZNY(y), OPERATOR(Plus), OPERATOR(Minus), PRZEMIENNY(Mnozenie), -PRZEMIENNY(Minus), -LACZNY(Mnozenie)]
+
+-LACZNY(Mnozenie)	res.	-OPERATOR(y)|LACZNY(y)	=>	-OPERATOR(Mnozenie)
+-OPERATOR(Mnozenie)	res.	-PRZEMIENNY(x)|OPERATOR(x)	=>	-PRZEMIENNY(Mnozenie)
+-PRZEMIENNY(Mnozenie)	res.	PRZEMIENNY(Mnozenie)	=>	F
+0.0014229309999999606
+
+[-PRZEMIENNY(x)|OPERATOR(x), -OPERATOR(y)|LACZNY(y), OPERATOR(Plus), OPERATOR(Minus), PRZEMIENNY(Mnozenie), -PRZEMIENNY(Minus), -LACZNY(Mnozenie)]
+
+-LACZNY(Mnozenie)	res.	-OPERATOR(y)|LACZNY(y)	=>	-OPERATOR(Mnozenie)
+-OPERATOR(Mnozenie)	res.	-PRZEMIENNY(x)|OPERATOR(x)	=>	-PRZEMIENNY(Mnozenie)
+-PRZEMIENNY(Mnozenie)	res.	PRZEMIENNY(Mnozenie)	=>	F
+0.0018065039999999866
+
+[-PRZEMIENNY(x)|OPERATOR(x), -OPERATOR(y)|LACZNY(y), OPERATOR(Plus), OPERATOR(Minus), PRZEMIENNY(Mnozenie), -PRZEMIENNY(Minus), -LACZNY(Mnozenie)]
+
+-LACZNY(Mnozenie)	res.	-OPERATOR(y)|LACZNY(y)	=>	-OPERATOR(Mnozenie)
+-OPERATOR(Mnozenie)	res.	-PRZEMIENNY(x)|OPERATOR(x)	=>	-PRZEMIENNY(Mnozenie)
+-PRZEMIENNY(Mnozenie)	res.	PRZEMIENNY(Mnozenie)	=>	F
+0.0014613310000000101
+
+srednia na 5 uruchomien = 0.001530195 sec
+
+[KOCHA(xa,Wspin)|KOCHA(xa,Narty), KOCHA(xb,Narty)|KOCHA(xb,Wspin), -KOCHA(xc,Wspin)|-LUBI(xc,Deszcz), -LUBI(xd,Deszcz)|-KOCHA(xd,Wspin), -KOCHA(xe,Narty)|LUBI(xe,Snieg), LUBI(xf,Snieg)|-KOCHA(xf,Narty), -LUBI(Abacki,xg)|-LUBI(Babacki,xg), LUBI(Babacki,xh)|LUBI(Abacki,xh), -LUBI(Babacki,xi)|-LUBI(Abacki,xi), LUBI(Abacki,xj)|LUBI(Babacki,xj), LUBI(Abacki,Deszcz), LUBI(Abacki,Snieg), -KOCHA(Babacki,Wspin)]
+
+-KOCHA(Babacki,Wspin)	res.	KOCHA(xa,Wspin)|KOCHA(xa,Narty)	=>	KOCHA(Babacki,Narty)
+KOCHA(Babacki,Narty)	res.	-KOCHA(xe,Narty)|LUBI(xe,Snieg)	=>	LUBI(Babacki,Snieg)
+LUBI(Babacki,Snieg)	res.	-LUBI(Abacki,xg)|-LUBI(Babacki,xg)	=>	-LUBI(Abacki,Snieg)
+-LUBI(Abacki,Snieg)	res.	-KOCHA(xe,Narty)|LUBI(xe,Snieg)	=>	-KOCHA(Abacki,Narty)
+-KOCHA(Abacki,Narty)	res.	KOCHA(xa,Wspin)|KOCHA(xa,Narty)	=>	KOCHA(Abacki,Wspin)
+KOCHA(Abacki,Wspin)	res.	-KOCHA(xc,Wspin)|-LUBI(xc,Deszcz)	=>	-LUBI(Abacki,Deszcz)
+-LUBI(Abacki,Deszcz)	res.	LUBI(Babacki,xh)|LUBI(Abacki,xh)	=>	LUBI(Babacki,Deszcz)
+0.013267609999999985
+
+[-ZNAJASIE(x,y)|-SMAKOSZ(y,Miesnyjez)|-WEGE(x), -JE(Osoba,Miesnyjez)|SPIEWA(Osoba), WEGE(Przemek), ZNAJASIE(Bartek,Przemek), SMAKOSZ(Bartek,Miesnyjez), ZNAJASIE(Przemek,Ziutek), -ZNAJASIE(Bartek,Ziutek), -SMAKOSZ(Ziutek,Miesnyjez), WEGE(Ziutek)]
+
+WEGE(Ziutek)	res.	-ZNAJASIE(x,y)|-SMAKOSZ(y,Miesnyjez)|-WEGE(x)	=>	-ZNAJASIE(Ziutek,y)|-SMAKOSZ(y,Miesnyjez)
+-ZNAJASIE(Ziutek,y)|-SMAKOSZ(y,Miesnyjez)	res.	SMAKOSZ(Bartek,Miesnyjez)	=>	-ZNAJASIE(Ziutek,Bartek)
+0.0030621830000000516
+
+[-ZNAJASIE(x,y)|-SMAKOSZ(y,Miesnyjez)|-WEGE(x), -JE(Osoba,Miesnyjez)|SPIEWA(Osoba), WEGE(Przemek), ZNAJASIE(Bartek,Przemek), SMAKOSZ(Bartek,Miesnyjez), ZNAJASIE(Przemek,Ziutek), -SMAKOSZ(Ziutek,Miesnyjez), WEGE(Ziutek)]
+
+WEGE(Ziutek)	res.	-ZNAJASIE(x,y)|-SMAKOSZ(y,Miesnyjez)|-WEGE(x)	=>	-ZNAJASIE(Ziutek,y)|-SMAKOSZ(y,Miesnyjez)
+-ZNAJASIE(Ziutek,y)|-SMAKOSZ(y,Miesnyjez)	res.	SMAKOSZ(Bartek,Miesnyjez)	=>	-ZNAJASIE(Ziutek,Bartek)
+0.003019516
+
+[-C(x)|W(x), -C(x)|R(x), C(A), O(A), -O(A)|-R(x)]
+
+-O(A)|-R(x)	res.	-C(x)|R(x)	=>	-O(A)|-C(x)
+-O(A)|-C(x)	res.	C(A)	=>	-O(A)
+-O(A)	res.	O(A)	=>	F
+0.0016145050000000438
+
+[POOR(x)|-SMART(x)|HAPPY(x), -READ(y)|SMART(y), READ(John), -POOR(John), -HAPPY(z)|EXCITING(z), -EXCITING(w)]
+
+-EXCITING(w)	res.	-HAPPY(z)|EXCITING(z)	=>	-HAPPY(z)
+-HAPPY(z)	res.	POOR(x)|-SMART(x)|HAPPY(x)	=>	POOR(x)|-SMART(x)
+POOR(x)|-SMART(x)	res.	-READ(y)|SMART(y)	=>	POOR(y)|-READ(y)
+POOR(y)|-READ(y)	res.	READ(John)	=>	POOR(John)
+POOR(John)	res.	-POOR(John)	=>	F
+0.002959356000000024
+
+[BIEDNY(x)|-MADRY(x)|SZCZESLIWY(x), -CZYTA(y)|MADRY(y), CZYTA(Osoba), -BIEDNY(Osoba), -SZCZESLIWY(z)|EKSCYTUJACE(z), -EKSCYTUJACE(w)]
+
+-EKSCYTUJACE(w)	res.	-SZCZESLIWY(z)|EKSCYTUJACE(z)	=>	-SZCZESLIWY(z)
+-SZCZESLIWY(z)	res.	BIEDNY(x)|-MADRY(x)|SZCZESLIWY(x)	=>	BIEDNY(x)|-MADRY(x)
+BIEDNY(x)|-MADRY(x)	res.	-CZYTA(y)|MADRY(y)	=>	BIEDNY(y)|-CZYTA(y)
+BIEDNY(y)|-CZYTA(y)	res.	CZYTA(Osoba)	=>	BIEDNY(Osoba)
+BIEDNY(Osoba)	res.	-BIEDNY(Osoba)	=>	F
+0.0024610099999999857
+
+[BIEDNY(x)|-MADRY(x)|SZCZESLIWY(x), -CZYTA(y)|MADRY(y), CZYTA(Osoba), -BIEDNY(Osoba), -SZCZESLIWY(z)|EKSCYTUJACE(z), -EKSCYTUJACE(w)]
+
+-EKSCYTUJACE(w)	res.	-SZCZESLIWY(z)|EKSCYTUJACE(z)	=>	-SZCZESLIWY(z)
+-SZCZESLIWY(z)	res.	BIEDNY(x)|-MADRY(x)|SZCZESLIWY(x)	=>	BIEDNY(x)|-MADRY(x)
+BIEDNY(x)|-MADRY(x)	res.	-CZYTA(y)|MADRY(y)	=>	BIEDNY(y)|-CZYTA(y)
+BIEDNY(y)|-CZYTA(y)	res.	CZYTA(Osoba)	=>	BIEDNY(Osoba)
+BIEDNY(Osoba)	res.	-BIEDNY(Osoba)	=>	F
+0.0027148770000000044
+
+[CZLOWIEK(x)|-FILOZOF(x), SMIERTELNY(y)|-CZLOWIEK(y), FILOZOF(Sokrates), FILOZOF(Platon), FILOZOF(Arystoteles), -SMIERTELNY(x)|-CZLOWIEK(x)]
+
+-SMIERTELNY(x)|-CZLOWIEK(x)	res.	CZLOWIEK(x)|-FILOZOF(x)	=>	-SMIERTELNY(x)|-FILOZOF(x)
+-SMIERTELNY(x)|-FILOZOF(x)	res.	SMIERTELNY(y)|-CZLOWIEK(y)	=>	-FILOZOF(y)|-CZLOWIEK(y)
+-FILOZOF(y)|-CZLOWIEK(y)	res.	CZLOWIEK(x)|-FILOZOF(x)	=>	-FILOZOF(x)
+-FILOZOF(x)	res.	FILOZOF(Sokrates)	=>	F
+0.0018082110000000595

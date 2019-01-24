@@ -1,3 +1,6 @@
-A(x)|B(x);
-A(x)|-B(x);
--A(x)
+CZLOWIEK(x)|-FILOZOF(x);
+SMIERTELNY(y)|-CZLOWIEK(y);
+FILOZOF(Sokrates);
+FILOZOF(Platon);
+FILOZOF(Arystoteles);
+-SMIERTELNY(x)|-CZLOWIEK(x)

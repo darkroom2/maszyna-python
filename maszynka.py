@@ -1,4 +1,5 @@
 import copy
+from timeit import default_timer as timer
 
 from Klasy import Argument, Predykat, Literal, Klauzula
 
@@ -125,18 +126,6 @@ def rezolucja(klauzula, teza):
                 return nowa_gorna_klauzula.usun_prawde(nowa_dolna_klauzula)
 
 
-# def wnioskuj(roboczy):
-#     nowa_klauzula = None
-#     for klauzula in lista_klauzul:
-#         nowa_klauzula = rezolucja(klauzula, roboczy)
-#         if nowa_klauzula:
-#             if nowa_klauzula not in lista_klauzul:
-#                 lista_klauzul.append(nowa_klauzula)
-#                 rezolucje.append((roboczy, klauzula, nowa_klauzula))
-#                 break
-#     if nowa_klauzula and nowa_klauzula is not 'F':
-#         wnioskuj(nowa_klauzula)
-
 def wnioskuj(roboczy):
     did = True
     nowa_klauzula = None
@@ -178,11 +167,19 @@ print(zdania)
 lista_klauzul = [stworz_klauzule(zdanie) for zdanie in zdania]
 print(lista_klauzul)
 rezolucje = []
+untouched_klauzule = copy.deepcopy(lista_klauzul)
 teza = copy.deepcopy(lista_klauzul[-1])
+start = timer()
 wnioskuj(teza)
-for tuple in rezolucje:
-    print(f'{tuple[0]} and {tuple[1]} => {tuple[2]}')
+end = timer()
+time_elapsed = end - start
+
+with open("wnioski.txt", 'a') as out:
+    out.write('\n\n')
+    out.write(str(untouched_klauzule))
+    out.write('\n\n')
+    for tuple in rezolucje:
+        out.write(f'{tuple[0]}\tres.\t{tuple[1]}\t=>\t{tuple[2]}\n')
+    out.write(str(time_elapsed))
 
 print(rezolucje)
-
-# TODO: mamy tutaj grupki z jakich klauzul ktora klauzula powstala, no i teraz mozemy to wykorzystac do narysowania drzewa jakos...
